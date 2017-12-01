@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "958040919392",
-    "firebase_url": "https://letschat-67d44.firebaseio.com",
-    "project_id": "letschat-67d44",
-    "storage_bucket": "letschat-67d44.appspot.com"
+    "project_number": "766644207205",
+    "firebase_url": "https://letschat-india.firebaseio.com",
+    "project_id": "letschat-india",
+    "storage_bucket": "letschat-india.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:958040919392:android:21fc931cc0d69b82",
+        "mobilesdk_app_id": "1:766644207205:android:21fc931cc0d69b82",
         "android_client_info": {
           "package_name": "com.techsol.letschat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "958040919392-ibj7275vn3i67jgg5r9tcmr3ptdsdq2m.apps.googleusercontent.com",
+          "client_id": "766644207205-scdtprsqgvhhlcveh6flmpb2o916un8l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.techsol.letschat",
-            "certificate_hash": "7a4a040761f6633dd284342f4808c6aee1332401"
+            "certificate_hash": "0be55c6e3186fea41b1af909e6e4119f7488ab1f"
           }
         },
         {
-          "client_id": "958040919392-a4g8ep2av4e38el6jbjqgbpp9nqtta8s.apps.googleusercontent.com",
+          "client_id": "766644207205-fo3n7bdh13g37tld6h18au9tb3ctmll5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDWljX8uQguAt8Q9nMVvQ6ILlr8bntoaLM"
+          "current_key": "AIzaSyDmpSZ779Is0nndObC7yfV3QdZ8-xEC3Zc"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "958040919392-a4g8ep2av4e38el6jbjqgbpp9nqtta8s.apps.googleusercontent.com",
+              "client_id": "766644207205-fo3n7bdh13g37tld6h18au9tb3ctmll5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

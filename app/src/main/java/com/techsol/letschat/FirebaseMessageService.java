@@ -2,11 +2,18 @@ package com.techsol.letschat;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.techsol.letschat.events.GlobalBus;
+import com.techsol.letschat.events.PushNotificationEvent;
 
 import static android.content.ContentValues.TAG;
 
@@ -15,43 +22,31 @@ public class FirebaseMessageService extends FirebaseMessagingService {
     }
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        // ...
-
-//        // TODO(developer): Handle FCM messages here.
-//        // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
-//        Log.d(TAG, "From: " + remoteMessage.getFrom());
-//        Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-//
-//
-//        // Check if message contains a data payload.
-//        if (remoteMessage.getData().size() > 0) {
-//            Log.d(TAG, "Message data payload: " + remoteMessage.getData());
-//        }
-//        String message = remoteMessage.getNotification().getBody();
-//
-//        // Check if message contains a notification payload.
-//        if (remoteMessage.getNotification() != null) {
-//            Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-//        }
-//
-//        addNotification(message);
-        // Also if you intend on generating your own notifications as a result of a received FCM
-        // message, here is where that should be initiated. See sendNotification method below.
+        addNotification(remoteMessage.getNotification().getBody(), remoteMessage.getNotification().getTitle());
     }
-    private void addNotification(String message) {
-        Log.d(TAG, "Message message,,,, " + message);
-        Notification newMessageNotification =
-                new Notification.Builder(MyApplication.getmContext())
+    private void addNotification(String message, String title) {
+       final PushNotificationEvent pushNotificationEvent =new PushNotificationEvent();
+        pushNotificationEvent.setMessage(message);
+        pushNotificationEvent.setTitle(title);
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                GlobalBus.getBus().post(pushNotificationEvent);
+            }
+        });
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.darkbg)
+                        .setContentTitle(title)
+                        .setContentText(message);
 
-                        .setContentTitle("Title")
-                        .setContentText("message "+message)
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
 
-                .build();
-
-// Issue the notification.
-        NotificationManager mNotificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(1234, newMessageNotification);
-
+        // Add as notification
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
     }
 }

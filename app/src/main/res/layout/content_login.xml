@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+
+    tools:showIn="@layout/activity_login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="54dp"
+            android:text="@string/app_name"
+            android:textColor="@color/silver_gray"
+            android:textSize="@dimen/text_size_large" />
+
+        <EditText
+            android:id="@+id/email_edit_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="54dp"
+            android:background="@color/black_overlay"
+            android:hint="@string/hint_email"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+
+        <EditText
+            android:id="@+id/pwd_edit_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black_overlay"
+            android:hint="@string/hint_password"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+        <EditText
+            android:id="@+id/name_edit_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black_overlay"
+            android:hint="@string/display_name"
+            android:textColor="@color/white"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/gray"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+
+        <Button
+            android:id="@+id/login_id"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_shape_btn"
+            android:text="@string/sign_in"
+            android:textColor="@color/silver_gray"
+
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="4dp"
+        android:text="@string/privacy"
+        android:textColor="@color/silver_gray" />
+</RelativeLayout>

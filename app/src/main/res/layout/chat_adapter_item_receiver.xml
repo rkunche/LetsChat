@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="50dp"
+    android:layout_marginTop="12dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+        android:background="@drawable/bubble_yellow"
+        android:id="@+id/message_holder_r_lay_id"
+        >
+
+        <TextView
+            android:id="@+id/receiver__message_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="some test" />
+
+        <TextView
+            android:id="@+id/receiver_time_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_below="@+id/receiver__message_id"
+             />
+
+        <ImageView
+            android:id="@+id/receiver_img_id"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            />
+    </RelativeLayout>
+</RelativeLayout>

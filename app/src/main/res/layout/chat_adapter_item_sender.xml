@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="50dp"
+    android:layout_marginTop="12dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/message_holder_lay_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bubble_green">
+
+        <TextView
+            android:id="@+id/sender_message_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="some texs lkjg;lkfgj sdflkjsddf ; slkdj;lksdjf lksjdfj"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/sender_time_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:text="12:30pm"
+            android:gravity="right"
+            android:layout_alignRight="@+id/sender_message_id"
+            android:layout_below="@+id/sender_message_id"
+            />
+
+        <ImageView
+            android:id="@+id/sender_img_id"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
